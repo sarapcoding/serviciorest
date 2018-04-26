@@ -26,8 +26,12 @@ public interface UserRepository extends JpaRepository<Usuario,Long>{
 	
 	Page<Usuario> findByRolAndTarifaLessThan (String rol,int tarifa, Pageable page);
 	
-	Page<Usuario> findByProvinciaAndRolAndTarifaLessThan (String provincia,String rol,int tarifa, Pageable page);
+	Page<Usuario> findByRolAndProvinciaAndTarifaLessThan (String rol,String provincia,int tarifa, Pageable page);
 	
+	List<Usuario> findByRolAndProvinciaAndTarifaLessThan (String rol,String provincia,int tarifa);
+	List<Usuario> findByRolAndProvinciaIsLike(String rol,String provincia);
+	List<Usuario> findByRolAndTarifaLessThan(String rol, int tarifa);
+	List<Usuario> findByRol(String rol);
 	
 //	Usuario findByLogin(String login);
 //	Usuario findByEmail (String email);

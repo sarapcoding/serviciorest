@@ -20,12 +20,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-
+//@JsonDeserialize(using = SitterProfile.class)
 @Entity
 public class Usuario {
 	
 	interface SitterResultado {}
 	
+	@JsonView(SitterResultado.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -315,10 +316,10 @@ public class Usuario {
 	@Override
 	public String toString() {
 		//String out = new Scanner(new URL("http://www.google.com").openStream(), "UTF-8").useDelimiter("\\A").next();
-		if (this.getRol().equals("ROLE_sitter")) {
-			//return "Login:"+this.login+" - Nombre:"+this.nombre+" - Tarifa: "+this.tarifa+" - Provincia: "+this.provincia;
-			return this.getId().toString();
-		}
+//		if (this.getRol().equals("ROLE_sitter")) {
+//			//return "Login:"+this.login+" - Nombre:"+this.nombre+" - Tarifa: "+this.tarifa+" - Provincia: "+this.provincia;
+//			return this.getId().toString();
+//		}
 		return "Login:"+this.login+" - Nombre:"+this.nombre+" - Provincia: "+this.provincia;
 	}
 
