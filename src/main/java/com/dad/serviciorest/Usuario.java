@@ -64,16 +64,16 @@ public class Usuario {
 	private Usuario centro;
 	
 	@OneToMany(mappedBy="origen")
-	private List<Comentario> comentario_escrito;
+	private List<Comentario> comentarioEscrito;
 	
 	@OneToMany(mappedBy="destino")
-	private List<Comentario> comentario_destinado;
+	private List<Comentario> comentarioDestinado;
 	
-	@OneToOne
-	private Agenda agenda;
-	
-	@OneToMany(mappedBy="padre")
-	private List<Hora> hora;
+//	@OneToOne
+//	private Agenda agenda;
+//	
+//	@OneToMany(mappedBy="padre")
+//	private List<Hora> hora;
 	
 	//private List<Mensaje> mensaje;
 		 
@@ -100,15 +100,15 @@ public class Usuario {
 		this.setDescripcion(descrip);
 		this.setRol(rol);
 		this.anuncio = new ArrayList<>();
-		this.comentario_destinado = new ArrayList<>();
-		this.comentario_escrito= new ArrayList<>();
+		this.comentarioDestinado = new ArrayList<>();
+		this.comentarioEscrito= new ArrayList<>();
 	}
 	
 
 	public Usuario() {
 		this.anuncio = new ArrayList<>();
-		this.comentario_destinado = new ArrayList<>();
-		this.comentario_escrito= new ArrayList<>();
+		this.comentarioDestinado = new ArrayList<>();
+		this.comentarioEscrito= new ArrayList<>();
 		
 	}
 
@@ -256,50 +256,50 @@ public class Usuario {
 
 
 
-	public List<Comentario> getComentario_escrito() {
-		return comentario_escrito;
+	public List<Comentario> getComentarioEscrito() {
+		return comentarioEscrito;
 	}
 
 
-	public List<Comentario> getComentario_destinado() {
-		return comentario_destinado;
-	}
-
-
-
-	public void setComentario_destinado(Comentario comentario_destinado) {
-		this.comentario_destinado.add(comentario_destinado);
+	public List<Comentario> getComentarioDestinado() {
+		return comentarioDestinado;
 	}
 
 
 
-	public Agenda getAgenda() {
-		return agenda;
+	public void setComentarioDestinado(Comentario comentarioDestinado) {
+		this.comentarioDestinado.add(comentarioDestinado);
 	}
 
 
-	public void setAgenda(Agenda agenda) {
-		this.agenda = agenda;
-	}
+
+//	public Agenda getAgenda() {
+//		return agenda;
+//	}
+//
+//
+//	public void setAgenda(Agenda agenda) {
+//		this.agenda = agenda;
+//	}
+//
+//
+//	public List<Hora> getHora() {
+//		return hora;
+//	}
+//
+//
+//	public void setHora(Hora hora) {
+//		this.hora.add(hora);
+//	}
+//
+//
+//	public void setAnuncio(List<Anuncio> anuncio) {
+//		this.anuncio = anuncio;
+//	}
 
 
-	public List<Hora> getHora() {
-		return hora;
-	}
-
-
-	public void setHora(Hora hora) {
-		this.hora.add(hora);
-	}
-
-
-	public void setAnuncio(List<Anuncio> anuncio) {
-		this.anuncio = anuncio;
-	}
-
-
-	public void setComentario_escrito(Comentario comentario_escrito) {
-		this.comentario_escrito.add(comentario_escrito);
+	public void setComentarioEscrito(Comentario comentarioEscrito) {
+		this.comentarioEscrito.add(comentarioEscrito);
 	}
 
 
